@@ -1,9 +1,18 @@
 package com.twu.biblioteca;
 
-public class BibliotecaApp {
-    public static String sendWelcomeMessage() {
-        return "Welcome";
+import java.util.Scanner;
 
+public class BibliotecaApp {
+    public static void main(String[] args) {
+        sendWelcomeMessage();
+        Librarian.showAllBooksInformation();
+        Scanner scanner = new Scanner(System.in);
+        int option = scanner.nextInt();
+        Menu.handleOption(option);
     }
 
+    public static String sendWelcomeMessage() {
+        System.out.println("Welcome");
+        return "Welcome";
+    }
 }

@@ -7,9 +7,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class BibliotecaAppTest {
     @Test
-    public void should_show_welcome_message(){
-        assertThat(BibliotecaApp.sendWelcomeMessage(),is("Welcome"));
+    public void should_show_welcome_message() {
+        assertThat(BibliotecaApp.sendWelcomeMessage(), is("Welcome"));
     }
-
-
 }
