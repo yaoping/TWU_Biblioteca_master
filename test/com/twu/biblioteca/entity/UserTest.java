@@ -9,6 +9,7 @@ public class UserTest {
     @Test
     public void should_create_user_successfully_when_library_number_format_valid() throws IllegalFormationException {
         User user = new User("yao", "459780810@qq.com", "遵义", "18875039949", "1314159", "123-4567");
+
         assertNotNull(user);
     }
 

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class MovieLibrary {
+public class MovieStorage {
     private static List<Movie> movies = new ArrayList<Movie>();
 
     static {
@@ -24,6 +24,6 @@ public class MovieLibrary {
     }
 
     public static void setMovies(List<Movie> movies) {
-        MovieLibrary.movies = movies;
+        MovieStorage.movies = movies;
     }
 }
