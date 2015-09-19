@@ -1,9 +1,12 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Storage;
+
+import com.twu.biblioteca.entity.Book;
 
 import java.util.*;
 
 public class Library {
     private static Map<String, Book> bookMap = new HashMap<String, Book>();
+
     static {
         Library.addBook("1", new Book("refactor", "Martin Fowler", Calendar.getInstance()));
         Library.addBook("2", new Book("TDD", "Kent Beck", Calendar.getInstance()));

@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.entity;
 
 
 import java.util.Calendar;
@@ -8,6 +8,7 @@ public class Book {
     private String author;
     private Calendar publishedDay;
     private boolean isLoaded;
+    private String bookId;
 
     public Book(String name, String author, Calendar publishedDay) {
         this.name = name;
@@ -33,5 +34,13 @@ public class Book {
 
     public void setIsLoaded(boolean isLoaded) {
         this.isLoaded = isLoaded;
+    }
+
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
     }
 }

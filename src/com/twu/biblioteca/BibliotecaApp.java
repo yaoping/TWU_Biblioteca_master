@@ -1,14 +1,21 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.entity.Menu;
+
 import java.util.Scanner;
 
 public class BibliotecaApp {
     public static void main(String[] args) {
         sendWelcomeMessage();
-        Librarian.showAllBooksInformation();
-        Scanner scanner = new Scanner(System.in);
-        int option = scanner.nextInt();
-        Menu.handleOption(option);
+        int option;
+        System.out.println(Menu.chooseOption());
+        do {
+            Scanner scanner = new Scanner(System.in);
+            option = scanner.nextInt();
+            scanner.nextLine();
+            Menu.handleOption(option);
+        } while (!Menu.isLeave(option));
+
     }
 
     public static String sendWelcomeMessage() {

@@ -1,11 +1,14 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Handler;
+
+import com.twu.biblioteca.entity.Book;
+import com.twu.biblioteca.Storage.Library;
 
 import java.util.Iterator;
 
-public class Librarian {
+public class BookHandler {
     public static void showAllBooksInformation() {
-        System.out.println("Show the library books information");
-        Iterator<String> keySetIterator = Library.getBookMap().keySet().iterator();
+        System.out.println("the library books information");
+        Iterator<String> keySetIterator = getStringIterator();
         while (keySetIterator.hasNext()) {
             String key = keySetIterator.next();
             System.out.println("bookName:" + Library.getBookMap().get(key).getName() + "  " + "bookAuthor:" + Library.getBookMap().get(key).getAuthor());
@@ -28,18 +31,20 @@ public class Librarian {
     }
 
     public String returnBook(String bookId) {
-        String message=null;
-        Iterator<String> keySetIterator = Library.getBookMap().keySet().iterator();
+        Iterator<String> keySetIterator = getStringIterator();
         while (keySetIterator.hasNext()) {
             String key = keySetIterator.next();
             if (bookId.equals(key)) {
                 Library.getBookMap().get(bookId).setIsLoaded(false);
-                System.out.println( "Thank you for returning the Book");
+                System.out.println("Thank you for returning the Book");
                 return "Thank you for returning the Book";
             }
         }
         return "That is not a valid book to return";
     }
 
+    private static Iterator<String> getStringIterator() {
+        return Library.getBookMap().keySet().iterator();
+    }
 
 }
